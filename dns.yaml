@@ -1,0 +1,14 @@
+- name: CORP_DNS
+  primary: "10.1.1.5"
+  secondary: "10.1.1.6"
+  domain_name:
+    - "*.a.com"
+    - "*.b.local"
+    - "*.c.local"
+- name: IOT_DNS
+  primary: "10.2.1.5"
+  secondary: "10.2.1.6"
+  domain_name:
+    - "*.iota.com"
+    - "*.iotb.local"
+    - "*.iotc.local"
