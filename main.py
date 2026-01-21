@@ -44,12 +44,11 @@ def read_yaml_file():
 def create_dns_server(dns_config):
     url = f"{BASE_URL}internal-dns-servers"
     payload = {
-        "name": dns_config["name"],
-        "domain_name": dns_config["domain_name"],
-        "primary": dns_config["primary"],
-        "secondary": dns_config["secondary"],
+        "name": dns_config.get("name", ""),
+        "domain_name": dns_config.get("domain_name", ""),
+        "primary": dns_config.get("primary", ""),
+        "secondary": dns_config.get("secondary", ""),
     }
-    print(payload)
     requests.request(method="POST", url=url, headers=HEADERS, data=payload).json()
 
 
