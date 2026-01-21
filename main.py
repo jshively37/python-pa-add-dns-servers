@@ -49,11 +49,18 @@ def create_dns_server(dns_config):
         "primary": dns_config.get("primary", ""),
         "secondary": dns_config.get("secondary", ""),
     }
-    requests.request(method="POST", url=url, headers=HEADERS, data=payload).json()
+    try:
+        response = requests.request(method="POST", url=url, headers=HEADERS, data=payload)
+        response.raise_for_status()
+    except requests.exceptions.HTTPError as e:
+        print(f"HTTP error: {e.response.status_code} - {e.response.text}")
+    except Exception as e:
+        print(e)
 
 
 if __name__ == "__main__":
     create_token()
     dns_list = read_yaml_file()
     for dns_config in dns_list:
+        print(f"Creating DNS Server for {dns_config['name']}")
         create_dns_server(dns_config=dns_config)
