@@ -2,13 +2,13 @@
   primary: "10.1.1.5"
   secondary: "10.1.1.6"
   domain_name:
-    - "*.a.com"
+    - "*.a.local"
     - "*.b.local"
     - "*.c.local"
 - name: IOT_DNS
   primary: "10.2.1.5"
   secondary: "10.2.1.6"
   domain_name:
-    - "*.iota.com"
+    - "*.iota.local"
     - "*.iotb.local"
     - "*.iotc.local"
