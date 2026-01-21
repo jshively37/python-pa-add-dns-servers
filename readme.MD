@@ -1,27 +1,23 @@
 # Overview
-This Python script adds Internal DNS servers from a text file.
+This Python script adds Internal DNS servers from a YAML file.
 
 ## Requirements
 ```
-astroid==3.3.10
-black==25.1.0
-certifi==2025.6.15
-charset-normalizer==3.4.2
-click==8.2.1
-dill==0.4.0
-idna==3.10
-isort==6.0.1
-mccabe==0.7.0
-mypy_extensions==1.1.0
-packaging==25.0
-pathspec==0.12.1
-platformdirs==4.3.8
-pylint==3.3.7
-python-dotenv==1.1.1
-requests==2.32.4
-tomlkit==0.13.3
-urllib3==2.5.0
-
+black              26.1.0
+certifi            2026.1.4
+charset-normalizer 3.4.4
+click              8.3.1
+idna               3.11
+mypy_extensions    1.1.0
+packaging          25.0
+pathspec           1.0.3
+pip                25.3
+platformdirs       4.5.1
+python-dotenv      1.2.1
+pytokens           0.4.0
+PyYAML             6.0.3
+requests           2.32.5
+urllib3            2.6.3
 ```
 
 ## Creating a service account in Prisma Access
@@ -46,6 +42,8 @@ OSX: source venv/bin/activate \
 Install the dependencies using `pip install -r requirements.txt`
 
 Rename `.env.example` to `.env` and populate your variables in this file generated while creating the service account. The .env is included in the .gitignore to ensure it does not accidentally get checked into a git repo.
+
+Modify the `dns.yaml` to reflect your desired state.
 
 Run: `python main.py`
 
