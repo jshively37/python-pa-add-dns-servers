@@ -1,5 +1,5 @@
 # Overview
-This Python script adds Internal DNS servers from a YAML file.
+This Python script adds Internal DNS servers to Strata Cloud Manager Prisma Access from a YAML file.
 
 ## Requirements
 ```
