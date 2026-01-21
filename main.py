@@ -50,7 +50,9 @@ def create_dns_server(dns_config):
         "secondary": dns_config.get("secondary", ""),
     }
     try:
-        response = requests.request(method="POST", url=url, headers=HEADERS, data=payload)
+        response = requests.request(
+            method="POST", url=url, headers=HEADERS, data=payload
+        )
         response.raise_for_status()
     except requests.exceptions.HTTPError as e:
         print(f"HTTP error: {e.response.status_code} - {e.response.text}")
