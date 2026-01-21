@@ -36,9 +36,10 @@ def create_token():
 
 
 def read_yaml_file():
-    with open('dns.yaml', 'r') as f:
+    with open("dns.yaml", "r") as f:
         dns_list = yaml.safe_load(f)
-    return(dns_list)
+    return dns_list
+
 
 def create_dns_server(dns_config):
     url = f"{BASE_URL}internal-dns-servers"
